@@ -1,90 +1,63 @@
-# DsMarketStore – Retail Analytics & Sales Forecasting End-to-End
+<p align="center">
+  <img src="https://img.shields.io/badge/Master%20Project-Data%20Science-blue" alt="Master Project"/>
+  <img src="https://img.shields.io/badge/XGBoost-Forecasting-orange" alt="XGBoost"/>
+  <img src="https://img.shields.io/badge/PowerBI-Dashboard-yellow" alt="Power BI"/>
+</p>
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<h1 align="center">🛒 DsMarketStore</h1>
+<p align="center"><strong>Retail Analytics & Sales Forecasting End-to-End</strong></p>
 
-**Proyecto final del Máster en Data Science (Nuclio Digital School)**  
-Solución completa para DSMarket: desde la exploración de datos y segmentación de tiendas/productos, hasta la predicción de ventas a 28 días y la generación de dashboards interactivos.
-
----
-
-## 📋 Contenidos
-
-- [Business Context](#business-context)  
-- [Objectives](#objectives)  
-- [Data](#data)  
-- [Methodology](#methodology)  
-  - [1. Exploratory Data Analysis (EDA)](#1-exploratory-data-analysis-eda)  
-  - [2. Clustering](#2-clustering)  
-  - [3. Sales Forecasting](#3-sales-forecasting)  
-  - [4. Dashboard & Reporting](#4-dashboard--reporting)  
-- [Project Structure](#project-structure)  
-- [Installation](#installation)  
-- [Usage](#usage)  
-- [Results & Insights](#results--insights)  
-- [Future Work](#future-work)  
-- [Team & Acknowledgements](#team--acknowledgements)  
-- [License](#license)
+<p align="center">
+  <a href="#business-context">📈 Business Context</a> •
+  <a href="#objectives">🎯 Objectives</a> •
+  <a href="#methodology">🛠️ Methodology</a> •
+  <a href="#project-structure">📂 Structure</a> •
+  <a href="#installation">💻 Installation</a> •
+  <a href="#usage">🚀 Usage</a> •
+  <a href="#results--insights">🔍 Results</a> •
+  <a href="#future-work">🔮 Future</a> •
+  <a href="#license">📄 License</a>
+</p>
 
 ---
 
-## Business Context
+## 🏬 Business Context
 
-DSMarket es una cadena omnicanal (físico + online) en EE. UU. que busca convertirse en una empresa data-driven. Este proyecto aborda la optimización de inventarios, precios y estrategias de marketing mediante técnicas avanzadas de Data Science.
-
----
-
-## Objectives
-
-1. **EDA**: Limpieza, unificación y análisis de datos de ventas, precios y eventos.  
-2. **Clustering**: Segmentación de tiendas y productos para campañas personalizadas.  
-3. **Forecasting**: Modelo XGBoost para predecir ventas a 28 días (métrica principal: RMSE).  
-4. **Dashboarding**: Creación de informes interactivos en Power BI para la toma de decisiones.
+DSMarket es una cadena omnicanal en EE. UU. que busca optimizar inventarios, precios y marketing mediante un enfoque **data-driven**.
 
 ---
 
-## Data
+## 🎯 Objectives
 
-> _Nota: los archivos raw CSV no están incluidos en el repo por tamaño._  
-> Para reproducir los resultados, descarga los CSV de tu fuente original y colócalos en `data_dsmarket/`.
-
-- **data_dsmarket/**  
-  - `daily_calendar_with_events.csv`  
-  - `item_prices.csv`  
-  - `item_sales.csv`
+- **EDA:** Limpieza y análisis de ventas, precios y eventos.  
+- **Clustering:** Segmentación de tiendas y productos.  
+- **Forecasting:** Pronóstico de ventas a 28 días con XGBoost.  
+- **Dashboarding:** Informes interactivos en Power BI.
 
 ---
 
-## Methodology
+## 🛠️ Methodology
 
-### 1. Exploratory Data Analysis (EDA)
-- Limpieza y tratamiento de nulos.  
-- Análisis de tendencias y estacionalidad por ciudad (New York, Boston, Philadelphia).  
-- Visualización de patrones de ventas y outliers.
-
-### 2. Clustering
-- **Feature engineering**: ratios de ventas, variación de precios, efectos de eventos.  
-- **PCA** para reducción de dimensión.  
-- **K-Means**: selección de _k_ óptimo mediante codo y coeficiente Silhouette.
-
-### 3. Sales Forecasting
-- Modelo **XGBoostRegressor** con búsqueda de hiperparámetros (GridSearchCV).  
-- División Train/Validation/Test temporal y _early stopping_.  
-- Evaluación con **RMSE**.
-
-### 4. Dashboard & Reporting
-- Dashboard interactivo en **Power BI** (`Visualización_Ventas(BI).pbix`).  
-- Visualizaciones clave: ventas por cluster, pronóstico vs real, sensibilidad por evento.
+| Phase                                    | Tools & Techniques                         |
+|------------------------------------------|--------------------------------------------|
+| 1. Exploratory Data Analysis (EDA)       | Pandas, Matplotlib, outlier detection      |
+| 2. Clustering                            | PCA, K-Means, Silhouette                   |
+| 3. Sales Forecasting                     | XGBoost, GridSearchCV, RMSE                |
+| 4. Dashboard & Reporting                 | Power BI Desktop (`.pbix`), visual filters |
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
-DsMarketStore/ ├── .gitignore ├── Informe_DSMarket_Retail-3.pdf # Informe final del proyecto ├── Visualización_Ventas(BI).pbix # Dashboard Power BI ├── análisis_ventas_py # Script EDA ├── cluster_tiendas.py # Clustering de tiendas ├── cluster_productos.py # Clustering de productos ├── graficos.py # Generación de gráficos ├── preprocessing_datos.py # Preprocesamiento de datos └── timeseries_forecast.py # Forecasting XGBoost
+DsMarketStore/ ├── .gitignore ├── Informe_DSMarket_Retail-3.pdf # Report ├── Visualización_Ventas(BI).pbix # Power BI dashboard ├── preprocessing_datos.py # Data cleaning & features ├── análisis_ventas_py # EDA script ├── cluster_tiendas.py # Store clustering ├── cluster_productos.py # Product clustering ├── timeseries_forecast.py # XGBoost forecasting ├── graficos.py # Plotting utilities └── README.md # Project overview
+
+yaml
+Copiar
+Editar
 
 ---
 
-## Installation
+## 💻 Installation
 
 ```bash
 git clone https://github.com/EduBayarri/DsMarketStore.git
@@ -95,63 +68,41 @@ venv\Scripts\activate
 # macOS/Linux:
 source venv/bin/activate
 pip install -r requirements.txt
+🚀 Usage
+Data prep & features
 
----
-
-### Usage
-
-## 1.Preprocesar datos
-
+bash
+Copiar
+Editar
 python preprocessing_datos.py
+Clustering
 
-
-## 2.Clustering
-
+bash
+Copiar
+Editar
 python cluster_tiendas.py
 python cluster_productos.py
+Forecasting
 
-
-## 3.Forecasting
-
+bash
+Copiar
+Editar
 python timeseries_forecast.py
+Dashboard
 
+Abre Visualización_Ventas(BI).pbix en Power BI Desktop.
 
-## 4.Power BI
+🔍 Results & Insights
+Clusters: Agrupaciones de tiendas/prod. con patrones similares.
 
-Abre Visualización_Ventas(BI).pbix en Power BI Desktop para explorar los dashboards.
+Forecast: RMSE ~X para horizonte de 28 días.
 
+BI Dashboard: Filtros por ciudad, categoría y evento para planificar reabastecimientos.
 
-### Results & Insights
+🔮 Future Work
+🚀 API REST para servir el modelo.
 
-Se definieron clusters de tiendas con comportamiento de ventas similar.
+🐳 Docker & CI/CD para despliegue automático.
 
-El modelo XGBoost alcanzó un RMSE de ~X en validación (detalles en el informe PDF).
+📊 Análisis de sentimiento de reseñas para pricing dinámico.
 
-Dashboard filtrable por ciudad, categoría y fecha, facilita la planificación de reabastecimientos.
-
-
-### Future Work
-
-Desplegar modelo vía API REST y contenedores Docker.
-
-Integrar pipelines CI/CD para reentrenamiento automático.
-
-Añadir análisis de sentimiento de reviews de clientes y precios dinámicos.
-
-
-### Team & Acknowledgements
-
-Máster DS & IA 2024, Nuclio Digital School
-
-Eduardo Bayarri
-
-Victor Cuenca
-
-Alan Jaén
-
-José Manuel Ruz
-
-Tutora: Raquel Revilla | Defensa: 16 Septiembre 2024
-
-License
-Este proyecto está bajo licencia MIT.
