@@ -82,6 +82,10 @@ DSMarket es una cadena omnicanal (físico + online) en EE. UU. que busca convert
 
 DsMarketStore/ ├── .gitignore ├── Informe_DSMarket_Retail-3.pdf # Informe final del proyecto ├── Visualización_Ventas(BI).pbix # Dashboard Power BI ├── análisis_ventas_py # Script EDA ├── cluster_tiendas.py # Clustering de tiendas ├── cluster_productos.py # Clustering de productos ├── graficos.py # Generación de gráficos ├── preprocessing_datos.py # Preprocesamiento de datos └── timeseries_forecast.py # Forecasting XGBoost
 
+yaml
+Copiar
+Editar
+
 ---
 
 ## Installation
@@ -95,52 +99,44 @@ venv\Scripts\activate
 # macOS/Linux:
 source venv/bin/activate
 pip install -r requirements.txt
+Usage
+Preprocesar datos
 
----
-
-### Usage
-
-## 1.Preprocesar datos
-
+bash
+Copiar
+Editar
 python preprocessing_datos.py
+Clustering
 
-
-## 2.Clustering
-
+bash
+Copiar
+Editar
 python cluster_tiendas.py
 python cluster_productos.py
+Forecasting
 
-
-## 3.Forecasting
-
+bash
+Copiar
+Editar
 python timeseries_forecast.py
-
-
-## 4.Power BI
-
+Power BI
 Abre Visualización_Ventas(BI).pbix en Power BI Desktop para explorar los dashboards.
 
-
-### Results & Insights
-
+Results & Insights
 Se definieron clusters de tiendas con comportamiento de ventas similar.
 
 El modelo XGBoost alcanzó un RMSE de ~X en validación (detalles en el informe PDF).
 
 Dashboard filtrable por ciudad, categoría y fecha, facilita la planificación de reabastecimientos.
 
-
-### Future Work
-
+Future Work
 Desplegar modelo vía API REST y contenedores Docker.
 
 Integrar pipelines CI/CD para reentrenamiento automático.
 
 Añadir análisis de sentimiento de reviews de clientes y precios dinámicos.
 
-
-### Team & Acknowledgements
-
+Team & Acknowledgements
 Máster DS & IA 2024, Nuclio Digital School
 
 Eduardo Bayarri
@@ -150,7 +146,6 @@ Victor Cuenca
 Alan Jaén
 
 José Manuel Ruz
-
 Tutora: Raquel Revilla | Defensa: 16 Septiembre 2024
 
 License
