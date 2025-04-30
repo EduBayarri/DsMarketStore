@@ -1,0 +1,13 @@
+# Excluir cualquier CSV de datos originales
+data_dsmarket/*.csv
+
+# Ignorar entornos virtuales de Python
+venv/
+.venv/
+
+# Ignorar cachés y archivos compilados de Python
+__pycache__/
+*.pyc
+
+# Ignorar checkpoints de Jupyter Notebooks
+.ipynb_checkpoints/
