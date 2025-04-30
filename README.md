@@ -23,7 +23,7 @@
 
 ## 🏬 Business Context
 
-DSMarket es una cadena omnicanal en EE. UU. que busca optimizar inventarios, precios y marketing mediante un enfoque **data-driven**.
+DSMarket es una cadena omnicanal en EE. UU. que busca optimizar inventarios, precios y marketing mediante un enfoque **data-driven**.
 
 ---
 
@@ -31,29 +31,37 @@ DSMarket es una cadena omnicanal en EE. UU. que busca optimizar inventarios, pre
 
 - **EDA:** Limpieza y análisis de ventas, precios y eventos.  
 - **Clustering:** Segmentación de tiendas y productos.  
-- **Forecasting:** Pronóstico de ventas a 28 días con XGBoost.  
-- **Dashboarding:** Informes interactivos en Power BI.
+- **Forecasting:** Pronóstico de ventas a 28 días con XGBoost.  
+- **Dashboarding:** Informes interactivos en Power BI.
 
 ---
 
 ## 🛠️ Methodology
 
-| Phase                                    | Tools & Techniques                         |
-|------------------------------------------|--------------------------------------------|
-| 1. Exploratory Data Analysis (EDA)       | Pandas, Matplotlib, outlier detection      |
-| 2. Clustering                            | PCA, K-Means, Silhouette                   |
-| 3. Sales Forecasting                     | XGBoost, GridSearchCV, RMSE                |
-| 4. Dashboard & Reporting                 | Power BI Desktop (`.pbix`), visual filters |
+| Phase                                | Tools & Techniques                     |
+|--------------------------------------|----------------------------------------|
+| 1. Exploratory Data Analysis (EDA)   | Pandas, Matplotlib, outlier detection  |
+| 2. Clustering                        | PCA, K-Means, Silhouette               |
+| 3. Sales Forecasting                 | XGBoost, GridSearchCV, RMSE            |
+| 4. Dashboard & Reporting             | Power BI Desktop (`.pbix`), filters    |
 
 ---
 
 ## 📂 Project Structure
 
-DsMarketStore/ ├── .gitignore ├── Informe_DSMarket_Retail-3.pdf # Report ├── Visualización_Ventas(BI).pbix # Power BI dashboard ├── preprocessing_datos.py # Data cleaning & features ├── análisis_ventas_py # EDA script ├── cluster_tiendas.py # Store clustering ├── cluster_productos.py # Product clustering ├── timeseries_forecast.py # XGBoost forecasting ├── graficos.py # Plotting utilities └── README.md # Project overview
-
-yaml
-Copiar
-Editar
+```
+DsMarketStore/
+├── .gitignore
+├── Informe_DSMarket_Retail-3.pdf      # Informe final
+├── Visualización_Ventas(BI).pbix     # Dashboard Power BI
+├── preprocessing_datos.py            # Limpieza y feature engineering
+├── análisis_ventas_py                 # EDA script
+├── cluster_tiendas.py                 # Clustering tiendas
+├── cluster_productos.py               # Clustering productos
+├── timeseries_forecast.py             # Forecasting XGBoost
+├── graficos.py                        # Utilidades de gráficos
+└── README.md                          # Descripción del proyecto
+```
 
 ---
 
@@ -63,46 +71,57 @@ Editar
 git clone https://github.com/EduBayarri/DsMarketStore.git
 cd DsMarketStore
 python3 -m venv venv
-# Windows:
+
+# Windows
 venv\Scripts\activate
-# macOS/Linux:
+
+# macOS/Linux
 source venv/bin/activate
+
 pip install -r requirements.txt
-🚀 Usage
-Data prep & features
+```
 
-bash
-Copiar
-Editar
-python preprocessing_datos.py
-Clustering
+---
 
-bash
-Copiar
-Editar
-python cluster_tiendas.py
-python cluster_productos.py
-Forecasting
+## 🚀 Usage
 
-bash
-Copiar
-Editar
-python timeseries_forecast.py
-Dashboard
+1. **Data Preparation**  
+   ```bash
+   python preprocessing_datos.py
+   ```
 
-Abre Visualización_Ventas(BI).pbix en Power BI Desktop.
+2. **Clustering**  
+   ```bash
+   python cluster_tiendas.py
+   python cluster_productos.py
+   ```
 
-🔍 Results & Insights
-Clusters: Agrupaciones de tiendas/prod. con patrones similares.
+3. **Forecasting**  
+   ```bash
+   python timeseries_forecast.py
+   ```
 
-Forecast: RMSE ~X para horizonte de 28 días.
+4. **Dashboard**  
+   Abre `Visualización_Ventas(BI).pbix` en Power BI Desktop.
 
-BI Dashboard: Filtros por ciudad, categoría y evento para planificar reabastecimientos.
+---
 
-🔮 Future Work
-🚀 API REST para servir el modelo.
+## 🔍 Results & Insights
 
-🐳 Docker & CI/CD para despliegue automático.
+- **Clusters:** Grupos de tiendas y productos con patrones de venta similares.  
+- **Forecast:** RMSE ~X para horizonte de 28 días (consulta el informe PDF para métricas).  
+- **Dashboard:** Interfaz filtrable por ciudad, categoría y fecha.
 
-📊 Análisis de sentimiento de reseñas para pricing dinámico.
+---
 
+## 🔮 Future Work
+
+- **API & Docker:** Desplegar el modelo con FastAPI en contenedores Docker.  
+- **CI/CD:** Integrar pipelines automáticos para reentrenamiento y despliegue.  
+- **Sentiment Analysis:** Integrar análisis de sentimiento de reseñas.
+
+---
+
+## 📄 License
+
+MIT © Eduardo Bayarri
